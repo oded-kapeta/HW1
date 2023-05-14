@@ -1,4 +1,9 @@
 public class State {
+    Board board;
+
+
+
+
 
     @Override
     public boolean equals(Object other) {

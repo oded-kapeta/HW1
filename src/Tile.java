@@ -1,4 +1,13 @@
 public class Tile {
+    String tileNumber;
+
+    public Tile(String number){
+        this.tileNumber = number;
+    }
+
+    public String getTile(){
+        return tileNumber;
+    }
 
     @Override
     public boolean equals(Object other) {
