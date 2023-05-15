@@ -1,5 +1,5 @@
 public class Tile {
-    String tileNumber;
+    private String tileNumber;
 
     public Tile(String number){
         this.tileNumber = number;

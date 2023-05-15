@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class Board {
-    public Tile [][] board;
+    private Tile [][] board;
     public Board(String gameBoard){
         String [] firstSplit = gameBoard.split("|");
         board = new Tile[firstSplit.length][firstSplit[0].length() - ((firstSplit[0].length())/2)];
@@ -12,6 +12,20 @@ public class Board {
             }
         }
     }
+    public Tile[][] getBoard(){
+        return this.board;
+    }
+     public int getRowLength(){
+        return board.length;
+     }
+    public int getColLength(){
+        return board[0].length;
+    }
+    public String getBoardPlace(int row, int col){
+        return board[row][col].getTile();
+    }
+
+
 
     @Override
     public boolean equals(Object other) {
