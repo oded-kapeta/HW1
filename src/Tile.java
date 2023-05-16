@@ -1,11 +1,11 @@
 public class Tile {
-    private String tileNumber;
+    private int tileNumber;
 
-    public Tile(String number){
+    public Tile(int number){
         this.tileNumber = number;
     }
 
-    public String getTile(){
+    public int getTile(){
         return tileNumber;
     }
 

@@ -8,7 +8,7 @@ public class Board {
         for (int i = 0; i < firstSplit.length; i++){
             String [] secondSplit = firstSplit[i].split(" ");
             for (int j = 0; j < secondSplit.length; j++){
-                board[i][j] = new Tile(secondSplit[j]);
+                board[i][j] = new Tile(Integer.valueOf(secondSplit[j]));
             }
         }
     }
@@ -21,7 +21,7 @@ public class Board {
     public int getColLength(){
         return board[0].length;
     }
-    public String getBoardPlace(int row, int col){
+    public int getBoardPlace(int row, int col){
         return board[row][col].getTile();
     }
 
