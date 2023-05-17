@@ -1,8 +1,7 @@
-public class Enum_direction {
-    public enum directions{
-        UP,
-        DOWN,
-        RIGHT,
-        LEFT
-    }
+public enum Enum_direction {
+    UP,
+    DOWN,
+    RIGHT,
+    LEFT
+
 }

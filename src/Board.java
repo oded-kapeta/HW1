@@ -4,7 +4,8 @@ public class Board {
     private Tile [][] board;
     public Board(String gameBoard){
         String [] firstSplit = gameBoard.split("|");
-        board = new Tile[firstSplit.length][firstSplit[0].length() - ((firstSplit[0].length())/2)];
+        String [] firstSplit2 = firstSplit[0].split(" ");
+        board = new Tile[firstSplit.length][firstSplit2.length];
         for (int i = 0; i < firstSplit.length; i++){
             String [] secondSplit = firstSplit[i].split(" ");
             for (int j = 0; j < secondSplit.length; j++){
@@ -27,6 +28,33 @@ public class Board {
     }
     public int getBoardPlace(int row, int col){
         return board[row][col].getTile();
+    }
+
+    public void swapBoard(Action action){
+        int colForSwap = action.getEmptyCol();
+        int rowForSwap = action.getEmptyRow();
+        Enum_direction enumDirection = action.getenum();
+        Tile temp;
+        switch (enumDirection){
+            case UP:
+                temp = board[rowForSwap][colForSwap];
+                board[rowForSwap][colForSwap] = board[rowForSwap+1][colForSwap];
+                board[rowForSwap+1][colForSwap] = temp;
+                break;
+            case DOWN:
+                temp = board[rowForSwap][colForSwap];
+                board[rowForSwap][colForSwap] = board[rowForSwap+1][colForSwap];
+                board[rowForSwap+1][colForSwap] = temp;
+                break;
+            case RIGHT:
+                temp = board[rowForSwap][colForSwap];
+                board[rowForSwap][colForSwap] = board[rowForSwap][colForSwap+1];
+                board[rowForSwap][colForSwap+1] = temp;
+            case LEFT:
+                temp = board[rowForSwap][colForSwap];
+                board[rowForSwap][colForSwap] = board[rowForSwap][colForSwap-1];
+                board[rowForSwap][colForSwap-1] = temp;
+        }
     }
 
 
