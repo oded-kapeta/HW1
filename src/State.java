@@ -1,7 +1,7 @@
 import java.security.PublicKey;
 
 public class State {
-    final int EMPTY_CELL = 95;
+    final int EMPTY_CELL = 0;
     private Board board;
     private Action [] validActions;
     public State(Board currentBoard){
@@ -12,7 +12,7 @@ public class State {
         int k = 1 ,row = 0;
         int rowLength = board.getRowLength();
         int colLength = board.getColLength();
-        if (board.getBoardPlace(rowLength-1,colLength-1) != 95)    return false;
+        if (board.getBoardPlace(rowLength-1,colLength-1) != EMPTY_CELL)    return false;
         for (int i = 0; i < rowLength;i++){
             for (int j = 0 ; j < colLength; j++){
                 if (board.getBoardPlace(i,j) == EMPTY_CELL || board.getBoardPlace(i,j+1) == EMPTY_CELL) break;

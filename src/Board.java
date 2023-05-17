@@ -8,7 +8,11 @@ public class Board {
         for (int i = 0; i < firstSplit.length; i++){
             String [] secondSplit = firstSplit[i].split(" ");
             for (int j = 0; j < secondSplit.length; j++){
-                board[i][j] = new Tile(Integer.valueOf(secondSplit[j]));
+                if (secondSplit[j].charAt(0) == '_'){
+                    board[i][j] = new Tile(0);
+                }else {
+                    board[i][j] = new Tile(Integer.valueOf(secondSplit[j]));
+                }
             }
         }
     }
