@@ -8,6 +8,13 @@ public class Action {
         this.emptyCol = col;
     }
 
+    public String toString()
+    {
+        String str = "move"
+
+
+    }
+
     public Enum_direction getenum(){
         return this.direction;
     }
