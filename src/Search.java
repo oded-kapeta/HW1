@@ -25,7 +25,7 @@ public class Search {
         State state1 = new State(board1);
         Node arr = new Node(state1);
 
-
+        return arr;
     }
 
     /**
