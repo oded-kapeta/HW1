@@ -11,30 +11,15 @@ public class Node {
     }
 
     public  Node[] expand(){
-        int emptyRow = action.getEmptyRow(),emptyCol = action.getEmptyCol();
-        int length = child.getActionsLength(emptyRow,emptyCol);
-        Node[] nextNodes = new Node[length];
-        int counterUp = child.upOk(emptyRow,emptyCol), counterDown = child.downOk(emptyRow,emptyCol);
-        int counterRight = child.rightOk(emptyRow,emptyCol), counterLeft = child.leftOk(emptyRow,emptyCol);
-        for (int i = 0 ; i < length ; i++){
-            if (counterUp == 1){
-                counterUp = 0;
-                Action upAction = new Action(Enum_direction.UP,emptyRow,emptyCol);
-                Board newBoard = new Board(child.getBoard());
-                newBoard.swapBoard(upAction);
-                nextNodes[i] = new Node()
-            }else if (counterDown == 1){
-                validActions[i] = new Action(Enum_direction.DOWN , emptyCellRow, emptyCellCol);
-                counterDown = 0;
-            } else if (counterRight == 1) {
-                validActions[i] = new Action(Enum_direction.RIGHT, emptyCellRow, emptyCellCol);
-                counterRight = 0;
-            } else if (counterLeft == 1) {
-                validActions[i] = new Action(Enum_direction.LEFT, emptyCellRow, emptyCellCol);
-                counterLeft = 0;
-            }
+        Action [] actionsForSons = child.actions();
+        Node [] childrens = new Node[actionsForSons.length];
+        for (int i = 0; i < actionsForSons.length; i++){
+            Board copyBoard = new Board(child.getBoard());
+            copyBoard.swapBoard(actionsForSons[i]);
+            State newState = new State(copyBoard);
+            childrens[i] = new Node(this,newState,actionsForSons[i]);
         }
-
+        return childrens;
     }
 
 
@@ -42,13 +27,9 @@ public class Node {
 
     public int heuristicValue(){
         int counter = 0;
-        int i = 0;
-        int j = 0;
-        for (i=0, i< child.getBoard().getRowLength(),i++)
-        {
-            for ( j=0, j< child.getBoard().getColLength(),j++)
-            {
-                if(child.getBoard().getBoardPlace(i,j) == 1+child.getBoard().getRowLength()*i+j)
+        for (int i = 0;i< child.getBoard().getRowLength();i++) {
+            for (int j = 0; j < child.getBoard().getColLength();j++) {
+                if(child.getBoard().getBoardPlace(i,j) != 1+(child.getBoard().getRowLength()*i)+j)
                     counter++;
             }
         }
