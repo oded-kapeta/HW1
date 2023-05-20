@@ -43,7 +43,7 @@ public class Node {
         int counter = 0;
         int i = 0;
         int j = 0;
-        for ( i=0, i< getRowLength(),i++)
+        for ( i=0, i< child.getBoard().getRowLength();i++)
         {
             for ( j=0, j< getColLength(),j++)
             {
