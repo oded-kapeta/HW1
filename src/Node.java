@@ -9,6 +9,10 @@ public class Node {
         this.State = boardKid;
         this.action = action2;
     }
+    public Node(State firstBoard)
+    {
+        this.State = firstBoard;
+    }
 
     public  Node[] expand(){
         Action [] actionsForSons = State.actions();
