@@ -17,8 +17,16 @@ public class Board {
             }
         }
     }
-    public Tile[][] getBoard(){
-        return this.board;
+
+    public Board(Board board2){
+        int row = board2.getRowLength();
+        int col = board2.getColLength();
+        board = new Tile[row][col];
+        for (int i = 0;i < row;i++){
+            for (int j = 0 ; j < col;j++){
+                board[i][j] = new Tile(board2.getBoardPlace(i,j));
+            }
+        }
     }
      public int getRowLength(){
         return board.length;
@@ -33,7 +41,7 @@ public class Board {
     public void swapBoard(Action action){
         int colForSwap = action.getEmptyCol();
         int rowForSwap = action.getEmptyRow();
-        Enum_direction enumDirection = action.getenum();
+        Enum_direction enumDirection = action.getEnum();
         Tile temp;
         switch (enumDirection){
             case UP:
@@ -43,17 +51,17 @@ public class Board {
                 break;
             case DOWN:
                 temp = board[rowForSwap][colForSwap];
-                board[rowForSwap][colForSwap] = board[rowForSwap+1][colForSwap];
-                board[rowForSwap+1][colForSwap] = temp;
+                board[rowForSwap][colForSwap] = board[rowForSwap-1][colForSwap];
+                board[rowForSwap-1][colForSwap] = temp;
                 break;
             case RIGHT:
                 temp = board[rowForSwap][colForSwap];
-                board[rowForSwap][colForSwap] = board[rowForSwap][colForSwap+1];
-                board[rowForSwap][colForSwap+1] = temp;
-            case LEFT:
-                temp = board[rowForSwap][colForSwap];
                 board[rowForSwap][colForSwap] = board[rowForSwap][colForSwap-1];
                 board[rowForSwap][colForSwap-1] = temp;
+            case LEFT:
+                temp = board[rowForSwap][colForSwap];
+                board[rowForSwap][colForSwap] = board[rowForSwap][colForSwap+1];
+                board[rowForSwap][colForSwap+1] = temp;
         }
     }
 

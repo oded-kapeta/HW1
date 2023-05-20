@@ -1,9 +1,6 @@
-import java.security.PublicKey;
-
 public class State {
     final int EMPTY_CELL = 0;
     private Board board;
-    private Action [] validActions;
 
     public State(Board currentBoard){
         this.board = currentBoard;
@@ -30,7 +27,6 @@ public class State {
 
 
     public Action[] actions(){
-        int [] arr = new int[4];
         int emptyCellRow = 0 , emptyCellCol = 0;
         int rowLength = board.getRowLength();
         int colLength = board.getColLength();
@@ -45,9 +41,9 @@ public class State {
         }
         int counterUp = upOk(emptyCellRow,emptyCellCol) ,counterDown = downOk(emptyCellRow,emptyCellCol) ;
         int counterRight = rightOk(emptyCellRow,emptyCellCol),counterLeft = leftOk(emptyCellRow,emptyCellCol);
-        int actionsLegth = getActionsLength(emptyCellRow,emptyCellCol);
-        validActions = new Action[actionsLegth];
-        for (int i = 0 ; i < actionsLegth ; i++){
+        int actionsLength = getActionsLength(emptyCellRow,emptyCellCol);
+        Action [] validActions = new Action[actionsLength];
+        for (int i = 0; i < actionsLength; i++){
             if (counterUp == 1){
                 validActions[i] = new Action(Enum_direction.UP, emptyCellRow, emptyCellCol);
                 counterUp = 0;
@@ -102,6 +98,10 @@ public class State {
     public Board result(Action action){
         board.swapBoard(action);
         return board;
+    }
+
+    public  Board getBoard(){
+        return this.board;
     }
 
 
