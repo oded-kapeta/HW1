@@ -5,7 +5,7 @@ public class Tile {
         this.tileNumber = number;
     }
 
-    public int getTile(){
+    public int value(){
         return tileNumber;
     }
 

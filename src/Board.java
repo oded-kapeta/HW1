@@ -35,7 +35,7 @@ public class Board {
         return board[0].length;
     }
     public int getBoardPlace(int row, int col){
-        return board[row][col].getTile();
+        return board[row][col].value();
     }
 
     public void swapBoard(Action action){
