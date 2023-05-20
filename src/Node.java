@@ -3,7 +3,8 @@ public class Node {
     private State child;
     private Action action;
 
-    public Node(Node boardFather,State boardKid ,Action action2){
+
+    public Node(Node boardFather,State boardKid ,Action action2,){
         this.parent = boardFather;
         this.child = boardKid;
         this.action = action2;
@@ -43,11 +44,11 @@ public class Node {
         int counter = 0;
         int i = 0;
         int j = 0;
-        for ( i=0, i< child.getBoard().getRowLength();i++)
+        for (i=0, i< child.getBoard().getRowLength(),i++)
         {
-            for ( j=0, j< getColLength(),j++)
+            for ( j=0, j< child.getBoard().getColLength(),j++)
             {
-                if(getTile(board[i][j])== 1+getRowLength()*i+j)
+                if(child.getBoard().getBoardPlace(i,j) == 1+child.getBoard().getRowLength()*i+j)
                     counter++;
             }
         }
