@@ -1,12 +1,12 @@
 public class Tile {
-    private int tileNumber;
+    private int value;
 
     public Tile(int number){
-        this.tileNumber = number;
+        this.value = number;
     }
 
-    public int value(){
-        return tileNumber;
+    public int getTileNumber(){
+        return value;
     }
 
     @Override

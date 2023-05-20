@@ -1,18 +1,18 @@
 import java.util.Arrays;
 
 public class Board {
-    private Tile [][] board;
+    private Tile [][] tiles;
     public Board(String gameBoard){
         String [] firstSplit = gameBoard.split("|");
         String [] firstSplit2 = firstSplit[0].split(" ");
-        board = new Tile[firstSplit.length][firstSplit2.length];
+        tiles = new Tile[firstSplit.length][firstSplit2.length];
         for (int i = 0; i < firstSplit.length; i++){
             String [] secondSplit = firstSplit[i].split(" ");
             for (int j = 0; j < secondSplit.length; j++){
                 if (secondSplit[j].charAt(0) == '_'){
-                    board[i][j] = new Tile(0);
+                    tiles[i][j] = new Tile(0);
                 }else {
-                    board[i][j] = new Tile(Integer.valueOf(secondSplit[j]));
+                    tiles[i][j] = new Tile(Integer.valueOf(secondSplit[j]));
                 }
             }
         }
@@ -21,21 +21,21 @@ public class Board {
     public Board(Board board2){
         int row = board2.getRowLength();
         int col = board2.getColLength();
-        board = new Tile[row][col];
+        tiles = new Tile[row][col];
         for (int i = 0;i < row;i++){
             for (int j = 0 ; j < col;j++){
-                board[i][j] = new Tile(board2.getBoardPlace(i,j));
+                tiles[i][j] = new Tile(board2.getBoardPlace(i,j));
             }
         }
     }
      public int getRowLength(){
-        return board.length;
+        return tiles.length;
      }
     public int getColLength(){
-        return board[0].length;
+        return tiles[0].length;
     }
     public int getBoardPlace(int row, int col){
-        return board[row][col].value();
+        return tiles[row][col].getTileNumber();
     }
 
     public void swapBoard(Action action){
@@ -45,23 +45,23 @@ public class Board {
         Tile temp;
         switch (enumDirection){
             case UP:
-                temp = board[rowForSwap][colForSwap];
-                board[rowForSwap][colForSwap] = board[rowForSwap+1][colForSwap];
-                board[rowForSwap+1][colForSwap] = temp;
+                temp = tiles[rowForSwap][colForSwap];
+                tiles[rowForSwap][colForSwap] = tiles[rowForSwap+1][colForSwap];
+                tiles[rowForSwap+1][colForSwap] = temp;
                 break;
             case DOWN:
-                temp = board[rowForSwap][colForSwap];
-                board[rowForSwap][colForSwap] = board[rowForSwap-1][colForSwap];
-                board[rowForSwap-1][colForSwap] = temp;
+                temp = tiles[rowForSwap][colForSwap];
+                tiles[rowForSwap][colForSwap] = tiles[rowForSwap-1][colForSwap];
+                tiles[rowForSwap-1][colForSwap] = temp;
                 break;
             case RIGHT:
-                temp = board[rowForSwap][colForSwap];
-                board[rowForSwap][colForSwap] = board[rowForSwap][colForSwap-1];
-                board[rowForSwap][colForSwap-1] = temp;
+                temp = tiles[rowForSwap][colForSwap];
+                tiles[rowForSwap][colForSwap] = tiles[rowForSwap][colForSwap-1];
+                tiles[rowForSwap][colForSwap-1] = temp;
             case LEFT:
-                temp = board[rowForSwap][colForSwap];
-                board[rowForSwap][colForSwap] = board[rowForSwap][colForSwap+1];
-                board[rowForSwap][colForSwap+1] = temp;
+                temp = tiles[rowForSwap][colForSwap];
+                tiles[rowForSwap][colForSwap] = tiles[rowForSwap][colForSwap+1];
+                tiles[rowForSwap][colForSwap+1] = temp;
         }
     }
 
@@ -73,7 +73,7 @@ public class Board {
             return false;
         }
         Board board = (Board) other;
-        return Arrays.deepEquals(tiles, board.tiles);
+        return Arrays.deepEquals(tiles,board.tiles);
     }
 
     @Override
