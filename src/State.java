@@ -3,10 +3,12 @@ public class State {
     private Board board;
 
     public State(Board currentBoard){
+        System.out.println("hi4");
         this.board = currentBoard;
     }
 
     public boolean isGoal(){
+        System.out.println("hi5");
         int k = 1 ,row = 0;
         int rowLength = board.getRowLength();
         int colLength = board.getColLength();
@@ -27,6 +29,7 @@ public class State {
 
 
     public Action[] actions(){
+        System.out.println("hi6");
         int emptyCellRow = 0 , emptyCellCol = 0;
         int rowLength = board.getRowLength();
         int colLength = board.getColLength();
@@ -43,18 +46,19 @@ public class State {
         int counterRight = rightOk(emptyCellRow,emptyCellCol),counterLeft = leftOk(emptyCellRow,emptyCellCol);
         int actionsLength = getActionsLength(emptyCellRow,emptyCellCol);
         Action [] validActions = new Action[actionsLength];
+        //System.out.println("counter left is:    " + actionsLength);
         for (int i = 0; i < actionsLength; i++){
             if (counterUp == 1){
-                validActions[i] = new Action(Enum_direction.UP, emptyCellRow, emptyCellCol);
+                validActions[i] = new Action(this,Enum_direction.UP, emptyCellRow+1, emptyCellCol);
                 counterUp = 0;
             }else if (counterDown == 1){
-                validActions[i] = new Action(Enum_direction.DOWN , emptyCellRow, emptyCellCol);
+                validActions[i] = new Action(this,Enum_direction.DOWN , emptyCellRow-1, emptyCellCol);
                 counterDown = 0;
             } else if (counterRight == 1) {
-                validActions[i] = new Action(Enum_direction.RIGHT, emptyCellRow, emptyCellCol);
+                validActions[i] = new Action(this,Enum_direction.RIGHT, emptyCellRow, emptyCellCol - 1);
                 counterRight = 0;
             } else if (counterLeft == 1) {
-                validActions[i] = new Action(Enum_direction.LEFT, emptyCellRow, emptyCellCol);
+                validActions[i] = new Action(this,Enum_direction.LEFT, emptyCellRow, emptyCellCol + 1);
                 counterLeft = 0;
             }
         }
@@ -68,7 +72,7 @@ public class State {
         if (row + 1 < rowLength)    counter++;
         if (row - 1 >= 0)   counter++;
         if (col + 1 < colLength)    counter++;
-        if (col - 1 >= colLength)   counter++;
+        if (col - 1 >= 0)   counter++;
         return counter;
 
     }
@@ -95,12 +99,19 @@ public class State {
         return 0;
     }
 
-    public Board result(Action action){
-        board.swapBoard(action);
-        return board;
+    public State result(Action action){
+        Board board2 = new Board(this.board);
+        board2.swapBoard(action);
+        return new State(board2);
     }
 
+    /*public Board result(Action action){
+        board.swapBoard(action);
+        return board;
+    }*/
+
     public  Board getBoard(){
+        //System.out.println("hi7");
         return this.board;
     }
 

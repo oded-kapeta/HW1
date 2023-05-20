@@ -1,9 +1,12 @@
 import java.util.Arrays;
+import java.util.regex.Pattern;
 
 public class Board {
     private Tile [][] tiles;
+
     public Board(String gameBoard){
-        String [] firstSplit = gameBoard.split("|");
+        System.out.println("hi1");
+        String [] firstSplit = gameBoard.split(Pattern.quote("|"));
         String [] firstSplit2 = firstSplit[0].split(" ");
         tiles = new Tile[firstSplit.length][firstSplit2.length];
         for (int i = 0; i < firstSplit.length; i++){
@@ -16,9 +19,16 @@ public class Board {
                 }
             }
         }
+        for (int k = 0; k <tiles.length;k++ ){
+            for (int l = 0 ;l < tiles[0].length;l++){
+                System.out.print(tiles[k][l].getTileNumber());
+            }
+            System.out.println();
+        }
     }
 
     public Board(Board board2){
+        System.out.println("hi2");
         int row = board2.getRowLength();
         int col = board2.getColLength();
         tiles = new Tile[row][col];
@@ -27,6 +37,13 @@ public class Board {
                 tiles[i][j] = new Tile(board2.getBoardPlace(i,j));
             }
         }
+        /*System.out.println("the copy board is    " );
+        for (int i = 0;i < row;i++){
+            for (int j = 0 ; j < col;j++){
+                System.out.print(tiles[i][j].getTileNumber());
+            }
+            System.out.println();
+        }*/
     }
      public int getRowLength(){
         return tiles.length;
@@ -39,29 +56,39 @@ public class Board {
     }
 
     public void swapBoard(Action action){
-        int colForSwap = action.getEmptyCol();
-        int rowForSwap = action.getEmptyRow();
+        System.out.println("hi3");
+        int colForSwap = action.getMoveCol();
+        int rowForSwap = action.getMoveRow();
         Enum_direction enumDirection = action.getEnum();
         Tile temp;
         switch (enumDirection){
             case UP:
                 temp = tiles[rowForSwap][colForSwap];
-                tiles[rowForSwap][colForSwap] = tiles[rowForSwap+1][colForSwap];
-                tiles[rowForSwap+1][colForSwap] = temp;
-                break;
-            case DOWN:
-                temp = tiles[rowForSwap][colForSwap];
                 tiles[rowForSwap][colForSwap] = tiles[rowForSwap-1][colForSwap];
                 tiles[rowForSwap-1][colForSwap] = temp;
                 break;
-            case RIGHT:
+            case DOWN:
                 temp = tiles[rowForSwap][colForSwap];
-                tiles[rowForSwap][colForSwap] = tiles[rowForSwap][colForSwap-1];
-                tiles[rowForSwap][colForSwap-1] = temp;
-            case LEFT:
+                tiles[rowForSwap][colForSwap] = tiles[rowForSwap+1][colForSwap];
+                tiles[rowForSwap+1][colForSwap] = temp;
+            case RIGHT:
+                System.out.print("HIIIIIIIIIIII");
                 temp = tiles[rowForSwap][colForSwap];
                 tiles[rowForSwap][colForSwap] = tiles[rowForSwap][colForSwap+1];
                 tiles[rowForSwap][colForSwap+1] = temp;
+                break;
+            case LEFT:
+                temp = tiles[rowForSwap][colForSwap];
+                tiles[rowForSwap][colForSwap] = tiles[rowForSwap][colForSwap-1];
+                tiles[rowForSwap][colForSwap-1] = temp;
+                break;
+        }
+        System.out.print("COPY BOARD AFTER SWAP IS :        ");
+        for(int i = 0 ; i < this.tiles.length; i++){
+            for (int j = 0 ; j < this.tiles[0].length;j++){
+                System.out.print(tiles[i][j].getTileNumber());
+            }
+            System.out.println();
         }
     }
 

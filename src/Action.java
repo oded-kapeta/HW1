@@ -1,30 +1,42 @@
 public class Action {
-    private Board board;
+    private State state;
     private Enum_direction direction;
-    private int emptyCol;
-    private int emptyRow;
-    public Action(Enum_direction enumDirection , int row , int col){
+    private int moveCol;
+    private int moveRow;
+    public Action(State state2 , Enum_direction enumDirection , int row , int col){
+        System.out.println("hi9");
+        this.state = state2;
         this.direction = enumDirection;
-        this.emptyRow = row;
-        this.emptyCol = col;
+        this.moveRow = row;
+        this.moveCol = col;
     }
 
     public String toString(){
-        String str = new String();
-        switch (direction){
+        System.out.println("hi10");
+        String str = new String("Move " + state.getBoard().getBoardPlace(moveRow, moveCol) + " " +direction.name().toLowerCase());
+
+        /*switch (direction){
             case UP:
-                str = "Move " + board.getBoardPlace(emptyRow + 1,emptyCol) + " up";
-                break;
+                if (emptyRow + 1 < state.getBoard().getRowLength()) {
+                    str = "Move " + state.getBoard().getBoardPlace(emptyRow + 1, emptyCol) + " up";
+                    break;
+                }
             case DOWN:
-                str = "Move " + board.getBoardPlace(emptyRow-1,emptyCol) + " down";
-                break;
+                if (emptyRow - 1 >= 0 ) {
+                    str = "Move " + state.getBoard().getBoardPlace(emptyRow - 1, emptyCol) + " down";
+                    break;
+                }
             case LEFT:
-                str = "Move " + board.getBoardPlace(emptyRow,emptyCol+1) + " left";
-                break;
+                if(emptyCol + 1 < state.getBoard().getColLength() ) {
+                    str = "Move " + state.getBoard().getBoardPlace(emptyRow , emptyCol + 1) + " left";
+                    break;
+                }
             case RIGHT:
-                str = "Move " + board.getBoardPlace(emptyRow,emptyCol-1) + " right";
-                break;
-        }
+                if(emptyCol - 1 >= 0  ) {
+                    str = "Move " + state.getBoard().getBoardPlace(emptyRow , emptyCol - 1) + " right";
+                    break;
+                }
+        }*/
         return  str;
     }
 
@@ -32,11 +44,11 @@ public class Action {
         return this.direction;
     }
 
-    public int getEmptyRow(){
-        return this.emptyRow;
+    public int getMoveRow(){
+        return this.moveRow;
     }
 
-    public int getEmptyCol(){
-        return this.emptyCol;
+    public int getMoveCol(){
+        return this.moveCol;
     }
 }

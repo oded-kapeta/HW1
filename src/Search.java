@@ -19,6 +19,7 @@ public class Search {
      * @return The root node used to search for a solution
      */
     private Node getRoot(String boardString) {
+        System.out.println("hi8");
         // TODO: Implement this function.
         // NOTE: This is the only function you need to modify in this class!
         Board board1 = new Board(boardString);
@@ -51,7 +52,7 @@ public class Search {
                     return result;
                 }
                 expandedNodes++;
-                Node[] children = node.expand();
+                Node[] children = node.  expand();
 
                 for (Node child : children) {  // Iterate over all possible child nodes
                     if (!enqueued.contains(child.getState())) {  // Check for duplication
