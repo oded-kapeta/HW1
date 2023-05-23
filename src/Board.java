@@ -2,14 +2,6 @@ import java.util.Arrays;
 import java.util.regex.Pattern;
 
 public class Board {
-    /*
-    HI,unfortunately our code is not solving as much games we want to , we check our functions and they are correct,
-    the only problem is in function result in State Class, in the switch case when we put "break" in all the cases
-    the code start "go crazy" and solve games that you not given , its like he random some games and solve them.
-    right now there is no "break" in the DOWN case so its solve 3 games and get to unsolvable in game 4,
-    it will be nice from you if you can consider our functions that we write , we sat on this work for a long time
-    and did our best , we even go to a lot of office hours but we failed to fix this specific problem, thank you.
-     */
     private Tile [][] tiles;
 
     /**
@@ -46,6 +38,7 @@ public class Board {
             }
         }
     }
+
 
     /**
      * return the row length of the board
@@ -86,55 +79,7 @@ public class Board {
         temp = tiles[rowForSwap][colForSwap];
         tiles[rowForSwap][colForSwap] = tiles[destinationrow][destinationcol];
         tiles[destinationrow][destinationcol] = temp;
-        /*for (int i = 0; i < tiles.length; i++){
-            for(int j = 0 ;j < tiles[0].length;j++){
-                System.out.print(tiles[i][j].getTileNumber() + " ");
-            }
-            System.out.println();
-        }*/
     }
-
-
-    /*public void swapBoard(Action action){
-        System.out.println("hi3");
-        int colForSwap = action.getMoveCol();
-        int rowForSwap = action.getMoveRow();
-        Enum_direction enumDirection = action.getEnum();
-        System.out.println("COL FOR SWAP IS: " + colForSwap + "ROW FOR SWAP IS : " + rowForSwap + "ANS ENUM : " + enumDirection);
-        Tile temp;
-        switch (enumDirection){
-            case UP:
-                temp = tiles[rowForSwap][colForSwap];
-                tiles[rowForSwap][colForSwap] = tiles[rowForSwap-1][colForSwap];
-                tiles[rowForSwap-1][colForSwap] = temp;
-                break;
-            case DOWN:
-                temp = tiles[rowForSwap][colForSwap];
-                tiles[rowForSwap][colForSwap] = tiles[rowForSwap+1][colForSwap];
-                tiles[rowForSwap+1][colForSwap] = temp;
-                break;
-            case RIGHT:
-                System.out.print("HIIIIIIIIIIII");
-                temp = tiles[rowForSwap][colForSwap];
-                tiles[rowForSwap][colForSwap] = tiles[rowForSwap][colForSwap+1];
-                tiles[rowForSwap][colForSwap+1] = temp;
-                break;
-            case LEFT:
-                temp = tiles[rowForSwap][colForSwap];
-                tiles[rowForSwap][colForSwap] = tiles[rowForSwap][colForSwap-1];
-                tiles[rowForSwap][colForSwap-1] = temp;
-                break;
-        }
-        System.out.print("COPY BOARD AFTER SWAP IS :        ");
-        System.out.println();
-        for(int i = 0 ; i < this.tiles.length; i++){
-            for (int j = 0 ; j < this.tiles[0].length;j++){
-                System.out.print(tiles[i][j].getTileNumber() + " ");
-            }
-            System.out.println();
-        }
-    }*/
-
 
 
     @Override
