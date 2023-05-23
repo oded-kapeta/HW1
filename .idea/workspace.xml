@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1fdd2af6-227b-4624-895e-ab4cb153b1fb" name="Changes" comment="now its 7/12">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Node.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2PdvJmdtBm8M7ptX4O1h1Aj0Rca" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1fdd2af6-227b-4624-895e-ab4cb153b1fb" name="Changes" comment="" />
+      <created>1683799704444</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1683799704444</updated>
+    </task>
+    <task id="LOCAL-00001" summary="first">
+      <created>1683800683729</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1683800683729</updated>
+    </task>
+    <task id="LOCAL-00002" summary="oded start the tile and state classes">
+      <created>1684090979922</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1684090979922</updated>
+    </task>
+    <task id="LOCAL-00003" summary="still in process, o.k">
+      <created>1684146150016</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1684146150016</updated>
+    </task>
+    <task id="LOCAL-00004" summary="still in process, o.k2">
+      <created>1684235839016</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1684235839016</updated>
+    </task>
+    <task id="LOCAL-00005" summary="still in process, o.k3">
+      <created>1684312966369</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1684312966369</updated>
+    </task>
+    <task id="LOCAL-00006" summary="almost finished my part, oded kapeta">
+      <created>1684341247600</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1684341247600</updated>
+    </task>
+    <task id="LOCAL-00007" summary="COMMIT 1">
+      <created>1684573333483</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1684573333483</updated>
+    </task>
+    <task id="LOCAL-00008" summary="commit2">
+      <created>1684574511735</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1684574511735</updated>
+    </task>
+    <task id="LOCAL-00009" summary="almost finished my part, oded kapeta">
+      <created>1684590438458</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1684590438458</updated>
+    </task>
+    <task id="LOCAL-00010" summary="almost finished my part, oded kapeta">
+      <created>1684591218237</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1684591218237</updated>
+    </task>
+    <task id="LOCAL-00011" summary="now the got is running">
+      <created>1684592782669</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1684592782669</updated>
+    </task>
+    <task id="LOCAL-00012" summary=" keepz improving the code">
+      <created>1684615047188</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1684615047188</updated>
+    </task>
+    <task id="LOCAL-00013" summary="documentation complete">
+      <created>1684693776891</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1684693776891</updated>
+    </task>
+    <task id="LOCAL-00014" summary="now its 7/12">
+      <created>1684837187315</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1684837187315</updated>
+    </task>
+    <task id="LOCAL-00015" summary="now its 7/12">
+      <created>1684840067846</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1684840067846</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first" />
+    <MESSAGE value="oded start the tile and state classes" />
+    <MESSAGE value="still in process, o.k" />
+    <MESSAGE value="still in process, o.k2" />
+    <MESSAGE value="still in process, o.k3" />
+    <MESSAGE value="COMMIT 1" />
+    <MESSAGE value="commit2" />
+    <MESSAGE value="almost finished my part, oded kapeta" />
+    <MESSAGE value="now the got is running" />
+    <MESSAGE value=" keepz improving the code" />
+    <MESSAGE value="documentation complete" />
+    <MESSAGE value="now its 7/12" />
+    <option name="LAST_COMMIT_MESSAGE" value="now its 7/12" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/Action.java</url>
+          <line>3</line>
+          <properties field="moveCol" class="Action" />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Node.java</url>
+          <line>29</line>
+          <properties class="Node" method="expand">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Board.java</url>
+          <line>94</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Board.java</url>
+          <line>95</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="State" memberName="board" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
+</project>

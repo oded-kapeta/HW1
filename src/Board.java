@@ -81,6 +81,35 @@ public class Board {
         tiles[destinationrow][destinationcol] = temp;
     }
 
+    /**
+     * this function calculate the heuristic value with the manhattan method
+     * @return the heuristic value
+     */
+    public int helpHueristic(){
+        int save1, save2,heuristicValue = 0;
+        int col = this.getColLength();
+        int row = this.getRowLength();
+        for (int i = 0; i< row;i++){
+            Tile [] temp = this.tiles[i];
+            for (int j = 0; j < col; j++){
+                int myvalue = temp[j].getTileNumber();
+                int realRow = (myvalue -1)/col;
+                int realCol = (myvalue -1)%col;
+                save1 = realRow - i ;
+                save2 = realCol - j;
+                if(save2 < 0){
+                    save2 *= -1;
+                }
+                if(save1 < 0){
+                    save1 *= -1;
+                }
+                heuristicValue += save1;
+                heuristicValue += save2;
+            }
+        }
+        return heuristicValue;
+    }
+
 
     @Override
     public boolean equals(Object other) {
