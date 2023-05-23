@@ -29,8 +29,10 @@ public class State {
         if (board.getBoardPlace(rowLength-1,colLength-1) != EMPTY_CELL)    return false;
         for (int i = 0; i < rowLength;i++){
             for (int j = 0 ; j < colLength; j++){
-                if (board.getBoardPlace(i,j) == EMPTY_CELL || board.getBoardPlace(i,j+1) == EMPTY_CELL) break;
-                if (board.getBoardPlace(i,j) + 1 != board.getBoardPlace(i,j+1)) return false;
+                //if (board.getBoardPlace(i,j) == EMPTY_CELL || board.getBoardPlace(i,j+1) == EMPTY_CELL) break;
+                if((i == rowLength-1 && (j==colLength-1 || j==colLength-2)))   break;
+                if (j >= colLength-1) continue;
+                if (board.getBoardPlace(i, j) + 1 != board.getBoardPlace(i, j + 1)) return false;
             }
         }
         while (row < board.getRowLength()){
@@ -162,6 +164,7 @@ public class State {
             case DOWN:
                 emptyrow = moverow + 1;
                 emptycol = movecol;
+                break;
             case RIGHT:
                 emptyrow = moverow;
                 emptycol = movecol + 1;

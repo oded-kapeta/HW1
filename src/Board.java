@@ -86,6 +86,12 @@ public class Board {
         temp = tiles[rowForSwap][colForSwap];
         tiles[rowForSwap][colForSwap] = tiles[destinationrow][destinationcol];
         tiles[destinationrow][destinationcol] = temp;
+        /*for (int i = 0; i < tiles.length; i++){
+            for(int j = 0 ;j < tiles[0].length;j++){
+                System.out.print(tiles[i][j].getTileNumber() + " ");
+            }
+            System.out.println();
+        }*/
     }
 
 
